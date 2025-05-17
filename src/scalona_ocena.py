@@ -1,6 +1,5 @@
 # scalona_ocena.py
 import pandas as pd
-import os
 import subprocess
 import walidacja_danych
 from openpyxl import load_workbook
@@ -192,7 +191,7 @@ def merge_and_classify(fundamental_file, technical_file, output_file):
         print("Nie udało się otworzyć pliku w Excelu.")
 
 if __name__ == "__main__":
-    fund_path = r"C:\Portfel2025\analiza_fundamentalna.csv"
-    tech_path = r"C:\Portfel2025\analiza_techniczna.csv"
+    fund_path = r"../data/analiza_fundamentalna.csv"
+    tech_path = r"../data/analiza_techniczna.csv"
     out_path = r"C:\Portfel2025\scalona_ocena.csv"
     merge_and_classify(fund_path, tech_path, out_path)

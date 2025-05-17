@@ -83,8 +83,8 @@ def analyze_multiple_companies(tickers, file_path):
             print(f"Błąd przy analizie {ticker}: {e}")
 
 if __name__ == "__main__":
-    with open("C:\\Portfel2025\\tickers.txt") as f:
+    with open("../data/tickers.txt") as f:
         tickers = [line.strip() for line in f if line.strip()]
 
-    output_file = r"C:\Portfel2025\analiza_fundamentalna.csv"
+    output_file = r"../data/analiza_fundamentalna.csv"
     analyze_multiple_companies(tickers, output_file)
