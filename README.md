@@ -11,7 +11,3 @@ Aplikacja do nauki programowania Pythona na przykładzie analizy fundamentalnej 
 ## 🔧 Wymagania:
 - Python 3.10+
 - `pandas`, `openpyxl`, `matplotlib`, `yfinance`
-
-## ✅ Uruchomienie:
-```bash
-python scalona_ocena.py
