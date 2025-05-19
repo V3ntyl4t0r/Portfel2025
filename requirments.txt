@@ -1,4 +1,5 @@
+yfinance
 pandas
 openpyxl
-matplotlib
-yfinance
+PyQt6
+numpy

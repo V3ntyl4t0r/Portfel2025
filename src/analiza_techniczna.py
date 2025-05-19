@@ -87,6 +87,6 @@ def analyze_many_from_csv(csv_path, output_path):
     print(f"Zapisano do pliku: {output_path}")
 
 if __name__ == "__main__":
-    input_csv = os.path.join("C:\\", "Portfel2025", "analiza_fundamentalna.csv")
-    output_csv = os.path.join("C:\\", "Portfel2025", "analiza_techniczna.csv")
+    input_csv = os.path.join("C:\\", "Portfel2025", "data", "analiza_fundamentalna.csv")
+    output_csv = os.path.join("C:\\", "Portfel2025", "data", "analiza_techniczna.csv")
     analyze_many_from_csv(input_csv, output_csv)
