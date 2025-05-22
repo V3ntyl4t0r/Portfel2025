@@ -19,6 +19,18 @@ def train_model(df, features, target_column="Target (6m +10%)"):
     numeric = [f for f in features if f not in ["EMA Crossover", "Strefa"]]
     categorical = ["EMA Crossover", "Strefa"]
 
+    # Usuń wiersze zawierające inf, -inf
+    X = X.replace([np.inf, -np.inf], np.nan)
+    X = X.dropna()
+    y = y.loc[X.index]  # dopasuj y do X po odrzuceniu wierszy
+
+    if len(X) == 0:
+        print("❌ Brak danych do trenowania modelu – zbyt wiele braków.")
+        df["ML_Predicted"] = 0
+        df["ML_Points"] = 0
+        df["Ocena AI"] = "Unikaj"
+        return df, None
+
     preprocessor = ColumnTransformer([
         ("num", SimpleImputer(strategy="mean"), numeric),
         ("cat", OneHotEncoder(handle_unknown="ignore"), categorical)
